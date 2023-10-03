@@ -18,4 +18,12 @@ La **censure** correspond au fait que certains projets n'ont pas atteint le succ
 
 Le jeu de données contient une liste de 18 143 projets Kickstarter menés entre le 15 décembre 2013 et le 15 juin 2014.
 
-Pour chaque projet, nous disposons notamment de sa date de départ, sa date de fin prévue, et de quand son objectif a été atteint, s'il a été atteint.
+Pour chaque projet, nous disposons notamment de :
+- sa date de départ
+- sa date de fin prévue
+- quand son objectif a été atteint
+- si l'objectif a été atteint
+- l'objectif financier
+- le nombre de financeurs
+- la catégorie du projet (art, cuisine, technologie)
+- informations sur le projet
