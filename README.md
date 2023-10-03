@@ -2,6 +2,8 @@
 
 Analyse de survie sur des projets Kickstarter.
 
+![Logo Kickstarter](img/kickstarter-logo.svg)
+
 _Kickstarter_ est un site Internet qui permet le _crowd-funding_, autrement dit le financement participatif. Des créateurs proposent leur idée de projet, un objectif de financement à atteindre.
 
 Si l'objectif de financement est atteint, les créateurs obtiennent le financement et peuvent réaliser le projet. Si l'objectif n'est pas atteint, les financeurs sont remboursés et le projet est annulé.
