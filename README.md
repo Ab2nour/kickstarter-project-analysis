@@ -31,3 +31,15 @@ Pour chaque projet, nous disposons notamment de :
 - le nombre de financeurs
 - la catégorie du projet (art, cuisine, technologie, ...)
 - informations sur le projet
+
+# Todo
+
+définir $h(t)$ (risque, taux ?)
+
+définir $\displaystyle H(t) = \int_0^t h(x) dx$
+
+estimation $\displaystyle \hat{s}(t) = \dfrac{1}{n} \sum_{i = 1}^{n} \mathbb{1}_{\{ t_i > t \}}$
+
+modèles classiques : Weibull
+
+modèles de machine learning
