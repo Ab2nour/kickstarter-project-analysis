@@ -17,6 +17,10 @@ poetry env use "chemin vers le .exe de la bonne version de python"
 ```bash
 poetry install
 ```
+## Une dépendance pour le développement (n'est pas destinée à l'utilisateur)
+```bash
+poetry add black[jupyter] -D
+```
 
 # Exécuter un script avec le bon environnement python
 ```bash
