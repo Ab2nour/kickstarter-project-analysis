@@ -30,3 +30,8 @@ poetry run python mon_script.py
 ## Un jupyter notebook pour VSCode
 CTRL + shift + P, "select interpreter", et sélectionner le bon kernel dans jupyter
 
+# Formater un script / notebook avec black
+```bash
+poetry run black .
+```
+Tous les scripts contenus dans les étages inférieurs au chemin précisé sont formatés.
