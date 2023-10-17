@@ -72,14 +72,3 @@ Pour chaque projet, nous disposons notamment de :
 # Objectifs de l'étude
 - Déterminer dans un premier temps $E(T)$, puis $E(T | Z)$ où $Z$ est un vecteur de $\mathbb{R}^d$ qui contient $d$ variables explicatives.
 - 
-# Todo
-
-définir $h(t)$ (risque, taux ?)
-
-définir $\displaystyle H(t) = \int_0^t h(x) dx$
-
-estimation $\displaystyle \hat{s}(t) = \dfrac{1}{n} \sum_{i = 1}^{n} \mathbb{1}_{\{ t_i > t \}}$
-
-modèles classiques : Weibull
-
-modèles de machine learning
