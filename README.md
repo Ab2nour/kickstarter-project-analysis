@@ -70,8 +70,10 @@ Pour chaque projet, nous disposons notamment de :
 - informations sur le projet
 
 # Objectifs de l'étude
-- Déterminer dans un premier temps $E(T)$, puis $E(T | Z)$ où $Z$ est un vecteur de $\mathbb{R}^d$ qui contient $d$ variables explicatives.
-- 
+- Déterminer dans un premier temps $E(T)$, puis $E(T | Z)$ où $Z$ est un vecteur aléatoire de $\mathbb{R}^d$ qui contient $d$ variables explicatives.
+- Déterminer $P(T > t)$ et $P(T > t | Z = z)$ pour tout $t \in \mathbb{R}^+_*$
+
+
 # Todo
 
 définir $h(t)$ (risque, taux ?)
