@@ -1,7 +1,8 @@
 # Todo
 - [ ] inspi https://larmarange.github.io/analyse-R/analyse-de-survie.html
 - [ ] diapo pas mal https://jonathanlenoir.files.wordpress.com/2013/12/analyse-de-survie-cox.pdf
-- [ ] 
+- [ ] modele de ML
+
 
 # Todo cours
 - [ ] modèles à tester
@@ -13,3 +14,4 @@
   - [ ] répartition
   - [ ] risque
   - [ ] survie
+- [ ] estimation $\displaystyle \hat{s}(t) = \dfrac{1}{n} \sum_{i = 1}^{n} \mathbb{1}_{\{ t_i > t \}}$
