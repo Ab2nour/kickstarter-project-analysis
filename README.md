@@ -4,6 +4,10 @@ Analyse de survie sur des projets Kickstarter.
 
 ![Logo Kickstarter](img/kickstarter-logo.svg)
 
+![](img/kmf-plots-has-video.png)
+
+Notre objectif est de modéliser la durée avant qu'un projet Kickstarter soit financé (ou son échec de financement dans le temps imparti).
+
 ## Ce qu'est Kickstarter
 
 _Kickstarter_ est un site Internet qui permet le _crowd-funding_, autrement dit le financement participatif. Des créateurs proposent leur idée de projet, un objectif de financement à atteindre.
