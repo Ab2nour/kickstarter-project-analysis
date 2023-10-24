@@ -19,7 +19,7 @@ poetry install
 ```
 ## Une dépendance pour le développement (n'est pas destinée à l'utilisateur)
 ```bash
-poetry add black[jupyter] -D
+poetry add black[jupyter] --group dev
 ```
 
 # Exécuter un script avec le bon environnement python
