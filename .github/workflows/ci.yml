@@ -24,4 +24,4 @@ jobs:
         run: poetry run isort .
 
       - name: Run notebooks to see if they execute without errors
-        run: poetry run jupyter execute src/*/*.ipynb
+        run: find src -type f -name "*.ipynb" | xargs poetry run jupyter execute
