@@ -1,0 +1,6 @@
+data:
+- data/**
+
+docs:
+- docs/**
+- README.md
