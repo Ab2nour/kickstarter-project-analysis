@@ -3,4 +3,5 @@ data:
 
 docs:
 - docs/**
-- /**/*.md
+- **/*.md
+- *.md
