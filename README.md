@@ -1,6 +1,6 @@
 # Analyse de survie
 
-Analyse de survie sur des projets Kickstarter.
+Analyse de survie sur des projets Kickstarter. Hello, test.
 
 ![Logo Kickstarter](img/kickstarter-logo.svg)
 
