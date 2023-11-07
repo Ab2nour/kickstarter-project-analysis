@@ -6,7 +6,7 @@ Analyse de survie sur des projets Kickstarter.
 
 ![](img/kmf-plots-has-video.png)
 
-Notre objectif est de modéliser la durée avant qu'un projet Kickstarter soit financé (ou son échec de financement dans le temps imparti).
+Notre objectif est de modéliser la durée avant qu'un projet Kickstarter soit financé (ou son échec de financement dans le temps imparti). test
 
 ## Ce qu'est Kickstarter
 
