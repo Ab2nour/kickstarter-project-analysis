@@ -3,6 +3,7 @@
 - [ ] diapo pas mal https://jonathanlenoir.files.wordpress.com/2013/12/analyse-de-survie-cox.pdf
 - [ ] modele de ML
 - [ ] jeu de données https://www.kaggle.com/datasets/kemical/kickstarter-projects?select=ks-projects-201801.csv & https://www.kaggle.com/datasets/sripaadsrinivasan/kickstarter-campaigns-dataset
+- [ ] faire un tableau à 3 colonnes : paramètre / formules / explication interpréation
 
 
 # Todo cours
