@@ -3,4 +3,4 @@ data:
 
 docs:
 - docs/**
-- README.md
+- /**/*.md
