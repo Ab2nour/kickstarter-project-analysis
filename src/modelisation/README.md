@@ -1,7 +1,7 @@
 # Modelisation folder
 
 ## Description 
-This folder contains all the code used to model the data using survival analysis models.
+This folder contains all the code to model the data using survival analysis models.
 
 ## Folder organization
 
