@@ -1,6 +1,9 @@
 import os
 from pathlib import Path
 
+import numpy as np
+import seaborn as sns
+
 
 def get_project_root() -> Path:
     """
@@ -24,3 +27,18 @@ def go_to_root_folder() -> None:
     None
     """
     os.chdir(get_project_root())
+
+
+def set_seed(seed: int = 0) -> None:
+    np.random.seed(seed)
+
+
+def set_plot_options() -> None:
+    """Sets default plotting options."""
+    sns.set_theme()
+
+
+def init_notebook(seed: int = 0) -> None:
+    go_to_root_folder()
+    set_plot_options()
+    set_seed(seed)
