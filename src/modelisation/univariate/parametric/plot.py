@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
+from src.constants import survival_function_xlabel
 from src.modelisation.univariate.parametric.models import model_type
 
 
@@ -13,9 +14,10 @@ def plot_estimation(
     plot_label: str,
 ) -> None:
     model.fit(event_times, event_observed)
-    model.plot_survival_function(plot_label)
+    model.plot_survival_function(label=plot_label)
 
     plt.title(plot_title)
+    plt.xlabel(survival_function_xlabel)
 
 
 def plot_estimations(
