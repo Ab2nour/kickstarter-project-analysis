@@ -82,14 +82,14 @@ Pour chaque projet, nous disposons notamment de :
 
 Voici l'organisation des différents dossiers du projet :
 
-[`📂 data`](https://github.com/Ab2nour/analyse-survie/tree/main/data)
+[`📂 data`](data)
 > Contient les données du projet Kickstarter.
 
-[`📂 docs`](https://github.com/Ab2nour/analyse-survie/tree/main/docs)
+[`📂 docs`](docs)
 > Contient la documentation du projet, ainsi que des notebooks d'exemples.
 
-[`📂 img`](https://github.com/Ab2nour/analyse-survie/tree/main/img)
+[`📂 img`](img)
 > Contient les images utilisées dans la documentation.
 
-[`📂 src`](https://github.com/Ab2nour/analyse-survie/tree/main/src)
+[`📂 src`](src)
 > Contient le code source du projet.
