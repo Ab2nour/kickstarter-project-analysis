@@ -76,3 +76,20 @@ Pour chaque projet, nous disposons notamment de :
 # Objectifs de l'étude
 - Déterminer dans un premier temps $E(T)$, puis $E(T | Z)$ où $Z$ est un vecteur aléatoire de $\mathbb{R}^d$ qui contient $d$ variables explicatives.
 - Déterminer $P(T > t)$ et $P(T > t | Z = z)$ pour tout $t \in \mathbb{R}^+_*$
+
+
+# Organisation des dossiers
+
+Voici l'organisation des différents dossiers du projet :
+
+[`📂 data`](data)
+> Contient les données du projet Kickstarter.
+
+[`📂 docs`](docs)
+> Contient la documentation du projet, ainsi que des notebooks d'exemples.
+
+[`📂 img`](img)
+> Contient les images utilisées dans la documentation.
+
+[`📂 src`](src)
+> Contient le code source du projet.
