@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-from models import model_type
+
+from src.modelisation.univariate.parametric.models import model_type
 
 
 def plot_estimations(
