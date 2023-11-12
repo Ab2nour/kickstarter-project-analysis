@@ -15,9 +15,10 @@ def plot_estimation(
     event_times: pd.Series | np.ndarray,
     event_observed: pd.Series | np.ndarray,
     plot_label: str,
+    show_at_risk_counts: bool = True,
 ) -> None:
     model.fit(event_times, event_observed)
-    model.plot_survival_function(label=plot_label)
+    model.plot_survival_function(label=plot_label, at_risk_counts=show_at_risk_counts)
 
     plt.title(survival_function_title)
     plt.xlabel(survival_function_xlabel)
@@ -32,7 +33,9 @@ def plot_estimations(
 ) -> None:
     for model_name, model in models.items():
         label = f"Modèle {model_name}"
-        plot_estimation(model, event_times, event_observed, label)
+        plot_estimation(
+            model, event_times, event_observed, label, show_at_risk_counts=not same_plot
+        )
 
         if not same_plot:
             plt.show()
