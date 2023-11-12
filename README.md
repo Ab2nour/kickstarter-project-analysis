@@ -6,6 +6,12 @@ Analyse de survie sur des projets Kickstarter.
 
 ![](img/kmf-plots-has-video.png)
 
+
+|                                                     |                                       |
+|:---------------------------------------------------:|:-------------------------------------:|
+| ![](img/non-parametric-survival-plot-has-video.svg) | ![](img/parametric-survival-plot.svg) |
+
+
 Notre objectif est de modéliser la durée avant qu'un projet Kickstarter soit financé (ou son échec de financement dans le temps imparti).
 
 ## Ce qu'est Kickstarter
