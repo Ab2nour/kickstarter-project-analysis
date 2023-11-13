@@ -23,12 +23,14 @@ poetry add black[jupyter] --group dev
 ```
 
 # Exécuter un script avec le bon environnement python
+## Avec poetry
 ```bash
 cd "chemin du dossier du projet"
 poetry run python mon_script.py
 ```
-## Un jupyter notebook pour VSCode
-CTRL + shift + P, "select interpreter", et sélectionner le bon kernel dans jupyter
+## Avec VS Code
+Sélectionner l'interpréteur python en bas à droite  
+ou CTRL + SHIFT + P, Python: select interpreter
 
 # Formater un script / notebook avec black
 ```bash
