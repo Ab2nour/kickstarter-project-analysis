@@ -28,6 +28,10 @@ flake8-bugbear = "^23.9.16"
 pandas-vet = "^2023.8.2"
 poethepoet = "^0.24.3"
 
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.isort]
 profile = "black"
 
