@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "analyse-survie"
+name = "kickstarter-project-analysis"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
