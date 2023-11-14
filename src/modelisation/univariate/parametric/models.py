@@ -1,6 +1,13 @@
-from lifelines import ExponentialFitter, LogNormalFitter, WeibullFitter, GeneralizedGammaFitter
+from lifelines import (
+    ExponentialFitter,
+    GeneralizedGammaFitter,
+    LogNormalFitter,
+    WeibullFitter,
+)
 
-model_type = LogNormalFitter | ExponentialFitter | WeibullFitter | GeneralizedGammaFitter
+model_type = (
+    LogNormalFitter | ExponentialFitter | WeibullFitter | GeneralizedGammaFitter
+)
 
 
 def create_models() -> dict[str, model_type]:
