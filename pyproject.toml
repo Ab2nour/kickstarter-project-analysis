@@ -76,6 +76,7 @@ profile = "black"
   [tool.poe.tasks.nbqa]
   help = "Run all QA tools on notebooks"
   sequence = [
+    { ref = "format" },
     { ref = "nbclean" },
     { ref = "nbcheck" },
     { ref = "nbrun" },
