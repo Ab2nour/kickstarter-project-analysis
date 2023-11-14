@@ -26,6 +26,7 @@ flake8 = "^6.1.0"
 flake8-annotations = "^3.0.1"
 flake8-bugbear = "^23.9.16"
 pandas-vet = "^2023.8.2"
+poethepoet = "^0.24.3"
 
 [tool.isort]
 profile = "black"
