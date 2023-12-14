@@ -61,7 +61,11 @@ profile = "black"
 
   [tool.poe.tasks.nbclean]
   help = "Clean notebook metadatas"
-  cmd = "nbdev_clean --fname ."
+  sequence = [
+    { cmd = "nbdev_clean --fname ." },
+    { cmd = "nb-clean clean . --preserve-cell-outputs --remove-empty-cells"},
+  ]
+
 
   [tool.poe.tasks.nbrun]
   help = "Run notebooks to see if they work"
@@ -69,7 +73,7 @@ profile = "black"
     RED='\\033[0;31m'
     NC='\\033[0m' # No Color
 
-    for input_file in $(find . -type f -name "*.ipynb"); do
+    for input_file in $(find src docs/source -type f -name "*.ipynb"); do
       echo "${RED}Notebook: ${input_file}${NC}"
       papermill "$input_file" temp.ipynb
     done
