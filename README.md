@@ -7,8 +7,8 @@ Analyse de survie sur des projets Kickstarter.
 ![](assets/img/kmf-plots-has-video.png)
 
 
-|                                                     |                                       |
-|:---------------------------------------------------:|:-------------------------------------:|
+|                                                            |                                              |
+|:----------------------------------------------------------:|:--------------------------------------------:|
 | ![](assets/img/non-parametric-survival-plot-has-video.svg) | ![](assets/img/parametric-survival-plot.svg) |
 
 
