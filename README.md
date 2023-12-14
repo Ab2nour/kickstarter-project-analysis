@@ -4,9 +4,6 @@ Analyse de survie sur des projets Kickstarter.
 
 ![Logo Kickstarter](assets/img/kickstarter-logo.svg)
 
-![](assets/img/kmf-plots-has-video.png)
-
-
 |                                                            |                                              |
 |:----------------------------------------------------------:|:--------------------------------------------:|
 | ![](assets/img/non-parametric-survival-plot-has-video.svg) | ![](assets/img/parametric-survival-plot.svg) |
@@ -22,7 +19,7 @@ Si l'objectif de financement est atteint, les créateurs obtiennent le financeme
 
 ## Modélisation du problème
 
-Soit **$T$** la variable aléatoire modélisant la **durée entre le lancement d'un projet et son succès**.  
+Soit **$T$** la variable aléatoire modélisant la **durée entre le lancement d'un projet et son succès**.
 
 ### Fonction de survie
 La **fonction de survie** correspond ici à la probabilité que le **succès** intervienne après un temps t.  
@@ -36,7 +33,7 @@ $$
 
 
 ### Vitesse de défaillance
-La fonction de vitesse de défaillance (ici, de survie) du modèle est définie par 
+La fonction de vitesse de défaillance (ici, de survie) du modèle est définie par
 $$
 f : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
@@ -49,7 +46,7 @@ $$
 $$
 h : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
-t & \rightarrow \dfrac{f(t)}{S(t)} 
+t & \rightarrow \dfrac{f(t)}{S(t)}
 \end{cases}
 $$
 
@@ -57,12 +54,12 @@ $$
 $$
 H : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
-t & \rightarrow \displaystyle \int_{0}^{t} h(x)dx = -\ln(S(t)) 
+t & \rightarrow \displaystyle \int_{0}^{t} h(x)dx = -\ln(S(t))
 \end{cases}
 $$
 
 ### Problème de censure
-La **censure** correspond au fait que certains projets n'ont pas atteint le succès dans le temps imparti pour leur récolte de fonds.  
+La **censure** correspond au fait que certains projets n'ont pas atteint le succès dans le temps imparti pour leur récolte de fonds.
 
 
 # Jeu de données
