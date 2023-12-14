@@ -2,14 +2,14 @@
 
 Analyse de survie sur des projets Kickstarter.
 
-![Logo Kickstarter](img/kickstarter-logo.svg)
+![Logo Kickstarter](assets/img/kickstarter-logo.svg)
 
-![](img/kmf-plots-has-video.png)
+![](assets/img/kmf-plots-has-video.png)
 
 
 |                                                     |                                       |
 |:---------------------------------------------------:|:-------------------------------------:|
-| ![](img/non-parametric-survival-plot-has-video.svg) | ![](img/parametric-survival-plot.svg) |
+| ![](assets/img/non-parametric-survival-plot-has-video.svg) | ![](assets/img/parametric-survival-plot.svg) |
 
 
 Notre objectif est de modéliser la durée avant qu'un projet Kickstarter soit financé (ou son échec de financement dans le temps imparti).
@@ -88,14 +88,14 @@ Pour chaque projet, nous disposons notamment de :
 
 Voici l'organisation des différents dossiers du projet :
 
+[`📂 assets`](assets)
+> Contient des ressources liées au projet, telles que des images.
+
 [`📂 data`](data)
 > Contient les données du projet Kickstarter.
 
 [`📂 docs`](docs)
 > Contient la documentation du projet, ainsi que des notebooks d'exemples.
-
-[`📂 img`](img)
-> Contient les images utilisées dans la documentation.
 
 [`📂 src`](src)
 > Contient le code source du projet.
