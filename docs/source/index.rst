@@ -26,7 +26,7 @@ Welcome to Kickstarter Project Analysis's documentation!
    :maxdepth: 2
    :caption: 📖 Reference
 
-   modules.rst
+   docstring/modules.rst
 
 
 Indices and tables
