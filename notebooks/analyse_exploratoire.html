@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Analyse exploratoire &#8212; Kickstarter Project Analysis  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=3181d424bc0d3cce17c7b026e09d78c270cea3e2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=19b21d1c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/analyse_exploratoire';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Estimation non-paramétrique univariée" href="non_parametric_estimation.html" />
+    <link rel="prev" title="Welcome to Kickstarter Project Analysis’s documentation!" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Kickstarter Project Analysis  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">📒 Notebooks</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analyse exploratoire</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="non_parametric_estimation.html">Estimation non-paramétrique univariée</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="parametric_estimation.html">Estimation paramétrique univariée</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="regression_models.html">Régression non-paramétrique</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">📝 How-to guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../how-to/poetry.html">Poetry tutorial</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../how-to/python-env-vscode.html">Python env with VS Code</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">📖 Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docstring/modules.html">Kickstarter Project Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docstring/constants.html">constants module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docstring/utils.html">utils module</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/analyse_exploratoire.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Analyse exploratoire</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyse exploratoire</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-des-outils-jeu-de-donnees">Import des outils / jeu de données</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation">Présentation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problematique">Problématique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jeu-de-donnees">Jeu de données</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-des-donnees">Lecture des données</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-des-variables">Présentation des variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisations">Visualisations</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="analyse-exploratoire">
+<h1>Analyse exploratoire<a class="headerlink" href="#analyse-exploratoire" title="Link to this heading">#</a></h1>
+</section>
+<section id="import-des-outils-jeu-de-donnees">
+<h1>Import des outils / jeu de données<a class="headerlink" href="#import-des-outils-jeu-de-donnees" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos">2</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="linenos">3</span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="kn">from</span> <span class="nn">src.utils</span> <span class="kn">import</span> <span class="n">init_notebook</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">init_notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+<span class="linenos">2</span>    <span class="s2">&quot;data/kickstarter_1.csv&quot;</span><span class="p">,</span>
+<span class="linenos">3</span>    <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="presentation">
+<h1>Présentation<a class="headerlink" href="#presentation" title="Link to this heading">#</a></h1>
+<section id="problematique">
+<h2>Problématique<a class="headerlink" href="#problematique" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># TODO: formuler une pbtique</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="jeu-de-donnees">
+<h2>Jeu de données<a class="headerlink" href="#jeu-de-donnees" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># TODO: ajouter une description / une partie pour parler du jeu de données</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="lecture-des-donnees">
+<h3>Lecture des données<a class="headerlink" href="#lecture-des-donnees" title="Link to this heading">#</a></h3>
+</section>
+<section id="presentation-des-variables">
+<h3>Présentation des variables<a class="headerlink" href="#presentation-des-variables" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span>
+<span class="linenos">2</span>    <span class="sa">f</span><span class="s2">&quot;Il y a </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> variables &quot;</span>
+<span class="linenos">3</span>    <span class="sa">f</span><span class="s2">&quot;qui décrivent </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> projets kickstarter.&quot;</span>
+<span class="linenos">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Il y a 56 variables qui décrivent 4175 projets kickstarter.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 4175 entries, 0 to 4174
+Data columns (total 56 columns):
+ #   Column                      Non-Null Count  Dtype  
+---  ------                      --------------  -----  
+ 0   day_succ                    4175 non-null   int64  
+ 1   Status                      4175 non-null   int64  
+ 2   cat1                        4175 non-null   int64  
+ 3   cat2                        4175 non-null   int64  
+ 4   cat3                        4175 non-null   int64  
+ 5   cat4                        4175 non-null   int64  
+ 6   cat5                        4175 non-null   int64  
+ 7   cat6                        4175 non-null   int64  
+ 8   cat7                        4175 non-null   int64  
+ 9   cat8                        4175 non-null   int64  
+ 10  cat9                        4175 non-null   int64  
+ 11  cat10                       4175 non-null   int64  
+ 12  cat11                       4175 non-null   int64  
+ 13  cat12                       4175 non-null   int64  
+ 14  cat13                       4175 non-null   int64  
+ 15  cat14                       4175 non-null   int64  
+ 16  cat15                       4175 non-null   int64  
+ 17  curr1                       4175 non-null   int64  
+ 18  curr2                       4175 non-null   int64  
+ 19  curr3                       4175 non-null   int64  
+ 20  curr4                       4175 non-null   int64  
+ 21  curr5                       4175 non-null   int64  
+ 22  curr6                       4175 non-null   int64  
+ 23  goal                        4175 non-null   float64
+ 24  backers                     4175 non-null   float64
+ 25  pledged                     4175 non-null   float64
+ 26  duration                    4175 non-null   float64
+ 27  updates                     4175 non-null   float64
+ 28  comments                    4175 non-null   float64
+ 29  rewards                     4175 non-null   float64
+ 30  facebook_connected          4175 non-null   int64  
+ 31  facebook_friends            4175 non-null   float64
+ 32  facebook_shares             4175 non-null   float64
+ 33  has_video                   4175 non-null   int64  
+ 34  creator_projects_created    4175 non-null   float64
+ 35  creator_projects_backed     4175 non-null   float64
+ 36  videos                      4175 non-null   float64
+ 37  images                      4175 non-null   float64
+ 38  words_description           4175 non-null   float64
+ 39  words_risks_and_challenges  4175 non-null   float64
+ 40  faqs                        4175 non-null   float64
+ 41  prj_prom                    4175 non-null   float64
+ 42  crt_suc_perc                4175 non-null   float64
+ 43  usr_net_pg_rnk              4175 non-null   float64
+ 44  usr_net_nodes               4175 non-null   float64
+ 45  usr_net_tie                 4175 non-null   float64
+ 46  usr_net_bic                 4175 non-null   float64
+ 47  1f_plg                      4175 non-null   float64
+ 48  1f_bck                      4175 non-null   float64
+ 49  1prj_prom                   4175 non-null   float64
+ 50  2f_plg                      4175 non-null   float64
+ 51  2f_bck                      4175 non-null   float64
+ 52  2prj_prom                   4175 non-null   float64
+ 53  3f_plg                      4175 non-null   float64
+ 54  3f_bck                      4175 non-null   float64
+ 55  3prj_prom                   4175 non-null   float64
+dtypes: float64(31), int64(25)
+memory usage: 1.8 MB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous séparons les variables numériques des variables catégoriques pour plus de commodités.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">var_categoriques</span> <span class="o">=</span> <span class="p">(</span>
+<span class="linenos">2</span>    <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;cat</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)]</span>
+<span class="linenos">3</span>    <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;curr</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="linenos">4</span>    <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;Status&quot;</span><span class="p">,</span> <span class="s2">&quot;facebook_connected&quot;</span><span class="p">,</span> <span class="s2">&quot;has_video&quot;</span><span class="p">]</span>
+<span class="linenos">5</span><span class="p">)</span>
+<span class="linenos">6</span><span class="n">var_categoriques</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cat1&#39;,
+ &#39;cat2&#39;,
+ &#39;cat3&#39;,
+ &#39;cat4&#39;,
+ &#39;cat5&#39;,
+ &#39;cat6&#39;,
+ &#39;cat7&#39;,
+ &#39;cat8&#39;,
+ &#39;cat9&#39;,
+ &#39;cat10&#39;,
+ &#39;cat11&#39;,
+ &#39;cat12&#39;,
+ &#39;cat13&#39;,
+ &#39;cat14&#39;,
+ &#39;cat15&#39;,
+ &#39;curr1&#39;,
+ &#39;curr2&#39;,
+ &#39;curr3&#39;,
+ &#39;curr4&#39;,
+ &#39;curr5&#39;,
+ &#39;curr6&#39;,
+ &#39;Status&#39;,
+ &#39;facebook_connected&#39;,
+ &#39;has_video&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">var_numeriques</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous convertissons les variables catégoriques en type <code class="docutils literal notranslate"><span class="pre">category</span></code>. (Nous les convertissons au préalable en type <code class="docutils literal notranslate"><span class="pre">string</span></code> car cela facilite l’affichage de la légende avec Matplotlib et Seaborn)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">df</span><span class="p">[</span><span class="n">var_categoriques</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">var_categoriques</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous convertissons les variables au format date.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 4175 entries, 0 to 4174
+Data columns (total 56 columns):
+ #   Column                      Non-Null Count  Dtype   
+---  ------                      --------------  -----   
+ 0   day_succ                    4175 non-null   int64   
+ 1   Status                      4175 non-null   category
+ 2   cat1                        4175 non-null   category
+ 3   cat2                        4175 non-null   category
+ 4   cat3                        4175 non-null   category
+ 5   cat4                        4175 non-null   category
+ 6   cat5                        4175 non-null   category
+ 7   cat6                        4175 non-null   category
+ 8   cat7                        4175 non-null   category
+ 9   cat8                        4175 non-null   category
+ 10  cat9                        4175 non-null   category
+ 11  cat10                       4175 non-null   category
+ 12  cat11                       4175 non-null   category
+ 13  cat12                       4175 non-null   category
+ 14  cat13                       4175 non-null   category
+ 15  cat14                       4175 non-null   category
+ 16  cat15                       4175 non-null   category
+ 17  curr1                       4175 non-null   category
+ 18  curr2                       4175 non-null   category
+ 19  curr3                       4175 non-null   category
+ 20  curr4                       4175 non-null   category
+ 21  curr5                       4175 non-null   category
+ 22  curr6                       4175 non-null   category
+ 23  goal                        4175 non-null   float64 
+ 24  backers                     4175 non-null   float64 
+ 25  pledged                     4175 non-null   float64 
+ 26  duration                    4175 non-null   float64 
+ 27  updates                     4175 non-null   float64 
+ 28  comments                    4175 non-null   float64 
+ 29  rewards                     4175 non-null   float64 
+ 30  facebook_connected          4175 non-null   category
+ 31  facebook_friends            4175 non-null   float64 
+ 32  facebook_shares             4175 non-null   float64 
+ 33  has_video                   4175 non-null   category
+ 34  creator_projects_created    4175 non-null   float64 
+ 35  creator_projects_backed     4175 non-null   float64 
+ 36  videos                      4175 non-null   float64 
+ 37  images                      4175 non-null   float64 
+ 38  words_description           4175 non-null   float64 
+ 39  words_risks_and_challenges  4175 non-null   float64 
+ 40  faqs                        4175 non-null   float64 
+ 41  prj_prom                    4175 non-null   float64 
+ 42  crt_suc_perc                4175 non-null   float64 
+ 43  usr_net_pg_rnk              4175 non-null   float64 
+ 44  usr_net_nodes               4175 non-null   float64 
+ 45  usr_net_tie                 4175 non-null   float64 
+ 46  usr_net_bic                 4175 non-null   float64 
+ 47  1f_plg                      4175 non-null   float64 
+ 48  1f_bck                      4175 non-null   float64 
+ 49  1prj_prom                   4175 non-null   float64 
+ 50  2f_plg                      4175 non-null   float64 
+ 51  2f_bck                      4175 non-null   float64 
+ 52  2prj_prom                   4175 non-null   float64 
+ 53  3f_plg                      4175 non-null   float64 
+ 54  3f_bck                      4175 non-null   float64 
+ 55  3prj_prom                   4175 non-null   float64 
+dtypes: category(24), float64(31), int64(1)
+memory usage: 1.1 MB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous avons 11 variables catégoriques, 16 variables quantitatives (dont 15 entières) ainsi qu’une variable de type date.</p>
+</section>
+</section>
+</section>
+<section id="visualisations">
+<h1>Visualisations<a class="headerlink" href="#visualisations" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;day_succ&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;day_succ&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/13ffe37d01d485861796fbce6005b12649d144f626a6183cdec778216ff4dfd5.png" src="../_images/13ffe37d01d485861796fbce6005b12649d144f626a6183cdec778216ff4dfd5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Répartition des projets&quot;</span><span class="p">)</span>
+<span class="linenos">2</span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Status&quot;</span><span class="p">])</span>
+<span class="linenos">3</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;0 = censuré</span><span class="se">\n</span><span class="s2">1 = projet financé dans le temps imparti&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;0 = censuré\n1 = projet financé dans le temps imparti&#39;)
+</pre></div>
+</div>
+<img alt="../_images/53d2c04ae14eef933588cc3569cb2804986f3125426b0ed50cb47d8d3a7f4b38.png" src="../_images/53d2c04ae14eef933588cc3569cb2804986f3125426b0ed50cb47d8d3a7f4b38.png" />
+</div>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to Kickstarter Project Analysis’s documentation!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="non_parametric_estimation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Estimation non-paramétrique univariée</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyse exploratoire</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-des-outils-jeu-de-donnees">Import des outils / jeu de données</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation">Présentation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problematique">Problématique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jeu-de-donnees">Jeu de données</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-des-donnees">Lecture des données</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-des-variables">Présentation des variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisations">Visualisations</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ab2nour, jExbrayat
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Ab2nour, jExbrayat.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
