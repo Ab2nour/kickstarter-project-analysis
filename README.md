@@ -60,10 +60,9 @@ $$
 $$
 H : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
-t & \rightarrow \displaystyle \int_{0}^{t} h(x)dx = -\ln(S(t))
+t & \rightarrow \displaystyle \int\_{0}^{t} h(x)dx = -\ln(S(t))
 \end{cases}
 $$
-
 
 ### Problème de censure
 La **censure** correspond au fait que certains projets n'ont pas atteint le succès dans le temps imparti pour leur récolte de fonds.
