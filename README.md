@@ -2,12 +2,14 @@
 
 Analyse de survie sur des projets Kickstarter.
 
-![Logo Kickstarter](assets/img/kickstarter-logo.svg)
+<p align="middle">
+  <img src="assets/img/kickstarter-logo.svg" alt="Logo Kickstarter" />
+</p>
 
-|                                                            |                                              |
-|:----------------------------------------------------------:|:--------------------------------------------:|
-| ![](assets/img/non-parametric-survival-plot-has-video.svg) | ![](assets/img/parametric-survival-plot.svg) |
-
+<p>
+  <img src="assets/img/non-parametric-survival-plot-has-video.svg" width="49%" />
+  <img src="assets/img/parametric-survival-plot.svg" width="49%" /> 
+</p>
 
 Notre objectif est de modéliser la durée avant qu'un projet Kickstarter soit financé (ou son échec de financement dans le temps imparti).
 
