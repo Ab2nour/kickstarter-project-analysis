@@ -26,6 +26,7 @@ Soit **$T$** la variable aléatoire modélisant la **durée entre le lancement d
 ### Fonction de survie
 La **fonction de survie** correspond ici à la probabilité que le **succès** intervienne après un temps t.  
 On cherche à modéliser la fonction de survie
+
 $$
 S : \begin{cases}
 \mathbb{R}^+_* & \rightarrow [0, 1] \\
@@ -36,6 +37,7 @@ $$
 
 ### Vitesse de défaillance
 La fonction de vitesse de défaillance (ici, de survie) du modèle est définie par
+
 $$
 f : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
@@ -45,6 +47,7 @@ $$
 
 ### Fonction de risque
 À un moment donné $t$, $h(t)$ mesure le taux auquel les événements surviennent. Si $h(t)$ est élevé, cela signifie qu'il y a une forte probabilité que le succès se produise prochainement.
+
 $$
 h : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
@@ -53,12 +56,14 @@ t & \rightarrow \dfrac{f(t)}{S(t)}
 $$
 
 ### Fonction de risque cumulé
+
 $$
 H : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
 t & \rightarrow \displaystyle \int_{0}^{t} h(x)dx = -\ln(S(t))
 \end{cases}
 $$
+
 
 ### Problème de censure
 La **censure** correspond au fait que certains projets n'ont pas atteint le succès dans le temps imparti pour leur récolte de fonds.
