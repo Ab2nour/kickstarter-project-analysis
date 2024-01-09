@@ -60,7 +60,7 @@ $$
 $$
 H : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
-t & \rightarrow \displaystyle \int\_{0}^{t} h(x)dx = -\ln(S(t))
+t & \rightarrow \displaystyle \int_{0}^{t} h(x)dx = -\ln(S(t))
 \end{cases}
 $$
 
