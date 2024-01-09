@@ -11,6 +11,7 @@ model_type = (
 
 
 def create_models() -> dict[str, model_type]:
+    """Create the univariate parametric models."""
     models = {
         "Weibull": WeibullFitter(),
         "Exponentiel": ExponentialFitter(),

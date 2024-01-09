@@ -35,6 +35,6 @@ jobs:
 
       - name: Run notebooks to see if they execute without errors
         run: |
-          for input_file in $(find . -type f -name "*.ipynb"); do
+          for input_file in $(find src docs/source -type f -name "*.ipynb"); do
             poetry run papermill "$input_file" temp.ipynb
           done

@@ -2,15 +2,14 @@
 
 Analyse de survie sur des projets Kickstarter.
 
-![Logo Kickstarter](img/kickstarter-logo.svg)
+<p align="middle">
+  <img src="assets/img/kickstarter-logo.svg" alt="Logo Kickstarter" />
+</p>
 
-![](img/kmf-plots-has-video.png)
-
-
-|                                                     |                                       |
-|:---------------------------------------------------:|:-------------------------------------:|
-| ![](img/non-parametric-survival-plot-has-video.svg) | ![](img/parametric-survival-plot.svg) |
-
+<p>
+  <img src="assets/img/non-parametric-survival-plot-has-video.svg" width="49%" />
+  <img src="assets/img/parametric-survival-plot.svg" width="49%" /> 
+</p>
 
 Notre objectif est de modéliser la durée avant qu'un projet Kickstarter soit financé (ou son échec de financement dans le temps imparti).
 
@@ -22,11 +21,12 @@ Si l'objectif de financement est atteint, les créateurs obtiennent le financeme
 
 ## Modélisation du problème
 
-Soit **$T$** la variable aléatoire modélisant la **durée entre le lancement d'un projet et son succès**.  
+Soit **$T$** la variable aléatoire modélisant la **durée entre le lancement d'un projet et son succès**.
 
 ### Fonction de survie
 La **fonction de survie** correspond ici à la probabilité que le **succès** intervienne après un temps t.  
 On cherche à modéliser la fonction de survie
+
 $$
 S : \begin{cases}
 \mathbb{R}^+_* & \rightarrow [0, 1] \\
@@ -36,7 +36,8 @@ $$
 
 
 ### Vitesse de défaillance
-La fonction de vitesse de défaillance (ici, de survie) du modèle est définie par 
+La fonction de vitesse de défaillance (ici, de survie) du modèle est définie par
+
 $$
 f : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
@@ -46,23 +47,25 @@ $$
 
 ### Fonction de risque
 À un moment donné $t$, $h(t)$ mesure le taux auquel les événements surviennent. Si $h(t)$ est élevé, cela signifie qu'il y a une forte probabilité que le succès se produise prochainement.
+
 $$
 h : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
-t & \rightarrow \dfrac{f(t)}{S(t)} 
+t & \rightarrow \dfrac{f(t)}{S(t)}
 \end{cases}
 $$
 
 ### Fonction de risque cumulé
+
 $$
 H : \begin{cases}
 \mathbb{R}^+_* & \rightarrow \mathbb{R}^+ \\
-t & \rightarrow \displaystyle \int_{0}^{t} h(x)dx = -\ln(S(t)) 
+t & \rightarrow \displaystyle \int\_{0}^{t} h(x)dx = -\ln(S(t))
 \end{cases}
 $$
 
 ### Problème de censure
-La **censure** correspond au fait que certains projets n'ont pas atteint le succès dans le temps imparti pour leur récolte de fonds.  
+La **censure** correspond au fait que certains projets n'ont pas atteint le succès dans le temps imparti pour leur récolte de fonds.
 
 
 # Jeu de données
@@ -88,14 +91,14 @@ Pour chaque projet, nous disposons notamment de :
 
 Voici l'organisation des différents dossiers du projet :
 
+[`📂 assets`](assets)
+> Contient des ressources liées au projet, telles que des images.
+
 [`📂 data`](data)
 > Contient les données du projet Kickstarter.
 
 [`📂 docs`](docs)
 > Contient la documentation du projet, ainsi que des notebooks d'exemples.
-
-[`📂 img`](img)
-> Contient les images utilisées dans la documentation.
 
 [`📂 src`](src)
 > Contient le code source du projet.
