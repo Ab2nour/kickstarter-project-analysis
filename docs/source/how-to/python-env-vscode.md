@@ -1,3 +1,4 @@
+# Python env with VS Code
 # Add workspace folder to PYTHONPATH
 ## Add lines in settings.json 
 ```json
