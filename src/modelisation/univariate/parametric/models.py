@@ -1,6 +1,7 @@
 from lifelines import (
     ExponentialFitter,
     GeneralizedGammaFitter,
+    LogLogisticFitter,
     LogNormalFitter,
     PiecewiseExponentialFitter,
     WeibullFitter,
@@ -8,6 +9,7 @@ from lifelines import (
 
 model_type = (
     LogNormalFitter
+    | LogLogisticFitter
     | ExponentialFitter
     | WeibullFitter
     | GeneralizedGammaFitter
@@ -21,6 +23,7 @@ def create_models() -> dict[str, model_type]:
         "Weibull": WeibullFitter(),
         "Exponentiel": ExponentialFitter(),
         "Log-normal": LogNormalFitter(),
+        "Log-logistique": LogLogisticFitter(),
         "Gamma-généralisée": GeneralizedGammaFitter(),
         "Exponentiel par morceau": PiecewiseExponentialFitter([9, 21, 29]),
     }

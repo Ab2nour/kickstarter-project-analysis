@@ -14,7 +14,7 @@ Welcome to Kickstarter Project Analysis's documentation!
    notebooks/non-parametric-estimation.ipynb
    notebooks/parametric-estimation.ipynb
    notebooks/regression-models.ipynb
-   notebooks/regression-models.ipynb
+   notebooks/supervised-regression.ipynb
 
 .. toctree::
    :maxdepth: 2
