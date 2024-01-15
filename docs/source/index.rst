@@ -10,10 +10,11 @@ Welcome to Kickstarter Project Analysis's documentation!
    :maxdepth: 2
    :caption: 📒 Notebooks
 
-   notebooks/analyse_exploratoire.ipynb
-   notebooks/non_parametric_estimation.ipynb
-   notebooks/parametric_estimation.ipynb
-   notebooks/regression_models.ipynb
+   notebooks/analyse-exploratoire.ipynb
+   notebooks/non-parametric-estimation.ipynb
+   notebooks/parametric-estimation.ipynb
+   notebooks/regression-models.ipynb
+   notebooks/regression-models.ipynb
 
 .. toctree::
    :maxdepth: 2
