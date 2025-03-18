@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
-from src.constants import hazard, survival
-from src.modelisation.univariate.parametric.models import model_type
+from src.plot.constants import hazard, survival
+from src.models.univariate.parametric.models import model_type
 
 estimation_type = Literal["survival", "hazard"]
 
