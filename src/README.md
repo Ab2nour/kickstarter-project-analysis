@@ -6,10 +6,10 @@ This folder contains the project source code.
 
 ## Folder organization
 
-[`📂 dashboards`](dashboards)
+[`📂 dashboards`](../dashboards)
 > The project dashboards.
 
-[`📂 modelisation`](modelisation)
+[`📂 modelisation`](models)
 > Code to model the data using survival analysis models.
 
 [`📂 notebooks`](notebooks)
